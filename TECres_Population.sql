@@ -34,7 +34,8 @@ INSERT INTO UBICACION VALUES('San Jose','Central','San Pedro'),
 ('San Jose','Desamparados','San Miguel');
 
 /*5TIPO_INMUEBLE*/
-INSERT INTO TIPO_INMUEBLE VALUES('Lote'),('Casa'),('Apartamento')
+INSERT INTO TIPO_INMUEBLE VALUES('Lote'),('Casa'),('Apartamento'),('LALA@')
+
 
 /*6TIPO_PISO*/
 INSERT INTO TIPO_PISO VALUES('Concreto lujado'), ('Ceramica'),('Porcelanato')
@@ -75,7 +76,7 @@ INSERT INTO ANUNCIO VALUES('Casa de 2 plantas, grande y comoda','Venta',0,123221
 
 
 /*17Publico_META*/
-INSERT INTO PUBLICO_META VALUES('Todos',100000,18,100,1);
+INSERT INTO PUBLICO_META VALUES('Adolescente','Masculino',100000,12,18,1);
 
 /*18MENSAJE*/
 INSERT MENSAJE VALUES('Hola, me interesa la casa',1,122222223)
