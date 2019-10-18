@@ -182,3 +182,63 @@ BEGIN CATCH
 	SELECT ERROR_PROCEDURE() AS ErrorProcedimiento,ERROR_MESSAGE() AS TipoError
 	ROLLBACK TRANSACTION
 END CATCH;
+
+GO
+CREATE PROCEDURE SP_Insertar_Comprador(
+@pNombre VARCHAR(30),
+@pApellido1 VARCHAR(30),
+@pApellido2 VARCHAR(30),
+@pGenero VARCHAR(30),
+@pFecha_Nacimiento DATETIME,
+@pIngresos_Mes INT,
+@pUsuario VARCHAR(30),
+@pContrasena VARCHAR(30),
+@pID_Ubicacion INT,
+@pOcupacion VARCHAR(30)
+)
+AS BEGIN TRY
+INSERT INTO COMPRADOR(Nombre,Apellido1,Apellido2,Genero,Fecha_Nacimiento,Ingresos_Mes,Usuario,Contrasena,ID_Ubicacion)
+VALUES(@pNombre,@pApellido1,@pApellido2,@pGenero,@pFecha_Nacimiento,@pIngresos_Mes,@pUsuario,@pContrasena,@pID_Ubicacion)
+
+INSERT INTO TIENE_OCUPACION(ID_Comprador,Ocupacion)
+VALUES(SCOPE_IDENTITY(),@pOcupacion)
+END TRY
+BEGIN CATCH
+	SELECT ERROR_PROCEDURE() AS ErrorProcedimiento,ERROR_MESSAGE() AS TipoError
+	ROLLBACK TRANSACTION
+END CATCH;
+
+GO
+CREATE PROCEDURE SP_Insertar_Propiedad(
+@pPrecio INT ,
+@pDireccion_Exacta VARCHAR(150) ,
+@pTitulo VARCHAR(30),
+@pParqueo_Visitas BIT ,
+@pNiveles INT,
+@pPiscina BIT,
+@pGimnasio BIT,
+@pTamano_Terreno INT,
+@pTamano_Construccion INT,
+@pCant_Habitaciones INT,
+@pCant_Banos INT,
+@pCant_Parqueos INT,
+@pDescripcion VARCHAR(350),
+@pFoto_Principal VARCHAR(100),
+@pID_Ubicacion INT,
+@pNombre_Inmueble VARCHAR(50),
+@pCedula_Cliente INT,
+@pNombrePiso VARCHAR(30)
+)
+AS 
+BEGIN TRY
+INSERT INTO PROPIEDAD(Precio,Direccion_Exacta,Titulo,Parqueo_Visitas,Niveles,Piscina,Gimnasio,Tamano_Terreno ,Tamano_Construccion,Cant_Habitaciones,
+Cant_Banos,Cant_Parqueos,Descripcion,Foto_Principal,ID_Ubicacion,Nombre_Inmueble,Cedula_Cliente) VALUES (@pPrecio,@pDireccion_Exacta,@pTitulo,@pParqueo_Visitas,
+@pNiveles,@pPiscina,@pGimnasio,@pTamano_Terreno,@pTamano_Construccion,@pCant_Habitaciones,@pCant_Banos,@pCant_Parqueos,@pDescripcion,@pFoto_Principal,@pID_Ubicacion,
+@pNombre_Inmueble,@pCedula_Cliente)
+INSERT INTO TIENE_PISO(ID_Propiedad,Tipo_Piso)
+VALUES(SCOPE_IDENTITY(),@pNombrePiso)
+END TRY
+BEGIN CATCH
+	SELECT ERROR_PROCEDURE() AS ErrorProcedimiento,ERROR_MESSAGE() AS TipoError
+	ROLLBACK TRANSACTION
+END CATCH;
