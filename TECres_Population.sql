@@ -3,28 +3,29 @@
 /*#######################################################*/
 
 GO
-USE TECres_prueba5
+USE TECres
 GO
 
 
 /*DATOS DEFAULT*/
 /*1OCUPACION*/
-INSERT INTO OCUPACION VALUES('Agente')
-INSERT INTO OCUPACION VALUES('Constructor')
-INSERT INTO OCUPACION VALUES('Doctor')
-INSERT INTO OCUPACION VALUES('Ingeniero')
+INSERT INTO OCUPACION(Nombre)
+VALUES('Agente'),('Constructor'),('Doctor'),('Ingeniero')
 
 /*2PERFIL_CLIENTE*/
-INSERT INTO PERFIL_DE_CLIENTE VALUES('Agente','Vendedor de productos')
-INSERT INTO PERFIL_DE_CLIENTE VALUES('Constructor','Encargado de construir propiedades')
-INSERT INTO PERFIL_DE_CLIENTE VALUES('Propietario','Dueño de las propiedades')
-INSERT INTO PERFIL_DE_CLIENTE VALUES('Anunciante','Encargado de promocionar propiedades')
+INSERT INTO PERFIL_DE_CLIENTE(Nombre,Descripcion)
+VALUES('Agente','Vendedor de productos'),
+('Constructor','Encargado de construir propiedades'),
+('Propietario','Dueño de las propiedades'),
+('Anunciante','Encargado de promocionar propiedades')
 
 /*3TIPO_ANUNCIO*/
-INSERT INTO TIPO_ANUNCIO VALUES('Normal','Su prioridad sera baja',1000),('Destacado','Tendra una prioridad media',2000),('Oro','Tendra una prioridad alta',3000),('Platino','Principal entre los anuncios',4000)
+INSERT INTO TIPO_ANUNCIO (Nombre,Descripcion,Costo)
+VALUES('Normal','Su prioridad sera baja',1000),('Destacado','Tendra una prioridad media',2000),('Oro','Tendra una prioridad alta',3000),('Platino','Principal entre los anuncios',4000);
 
 /*4UBICACION*/
-INSERT INTO UBICACION VALUES('San Jose','Central','San Pedro'),
+INSERT INTO UBICACION (Provincia,Canton,Distrito)
+VALUES('San Jose','Central','San Pedro'),
 ('San Jose','Central','Sabanilla'),
 ('San Jose','Central','Mercedes'),
 ('San Jose','Central','San Rafael'),
@@ -137,9 +138,10 @@ INSERT INTO UBICACION VALUES('San Jose','Central','San Pedro'),
 ('San Jose','León Cortés Castro','Llano Bonito'),
 ('San Jose','León Cortés Castro','San Isidro'),
 ('San Jose','León Cortés Castro','Santa Cruz'),
-('San Jose','León Cortés Castro','San Antonio');
+('San Jose','León Cortés Castro','San Antonio')
 
-INSERT INTO UBICACION VALUES('Alajuela','Central','Alajuela'),
+INSERT INTO UBICACION (Provincia,Canton,Distrito)
+VALUES('Alajuela','Central','Alajuela'),
 ('Alajuela','Central','San José'),
 ('Alajuela','Central','Carrizal'),
 ('Alajuela','Central','San Antonio'),
@@ -254,7 +256,9 @@ INSERT INTO UBICACION VALUES('Alajuela','Central','Alajuela'),
 ('Alajuela','Guatuso','Katira'),
 ('Alajuela','Río Cuarto','Río Cuarto')
 
-INSERT INTO UBICACION VALUES('Cartago','Central','Oriental'),
+
+INSERT INTO UBICACION (Provincia,Canton,Distrito)
+VALUES('Cartago','Central','Oriental'),
 ('Cartago','Central','Occidental'),
 ('Cartago','Central','Carmen'),
 ('Cartago','Central','San Nicolás'),
@@ -306,7 +310,8 @@ INSERT INTO UBICACION VALUES('Cartago','Central','Oriental'),
 ('Cartago','El Guarco','Tobosi'),
 ('Cartago','El Guarco','Patio De Agua')
 
-INSERT INTO UBICACION VALUES('Heredia','Central','Heredia'),
+INSERT INTO UBICACION (Provincia,Canton,Distrito)
+VALUES('Heredia','Central','Heredia'),
 ('Heredia','Central','Mercedes'),
 ('Heredia','Central','San Francisco'),
 ('Heredia','Central','Ulloa'),
@@ -354,7 +359,8 @@ INSERT INTO UBICACION VALUES('Heredia','Central','Heredia'),
 ('Heredia','Sarapiquí','Llanuras Del Gaspar'),
 ('Heredia','Sarapiquí','Cureña')
 
-INSERT INTO UBICACION VALUES('Guanacaste','Liberia','Liberia'),
+INSERT INTO UBICACION (Provincia,Canton,Distrito)
+VALUES('Guanacaste','Liberia','Liberia'),
 ('Guanacaste','Liberia','Nacascolo'),
 ('Guanacaste','Liberia','Cañas Dulces'),
 ('Guanacaste','Liberia','Mayorga'),
@@ -413,8 +419,8 @@ INSERT INTO UBICACION VALUES('Guanacaste','Liberia','Liberia'),
 ('Guanacaste','Hojancha','Monte Romo'),
 ('Guanacaste','Hojancha','Puerto Carrillo'),
 ('Guanacaste','Hojancha','Huacas')
-
-INSERT INTO UBICACION VALUES('Puntarenas','Central','Puntarenas'),
+INSERT INTO UBICACION (Provincia,Canton,Distrito)
+VALUES('Puntarenas','Central','Puntarenas'),
 ('Puntarenas','Central','Pitahaya'),
 ('Puntarenas','Central','Chomes'),
 ('Puntarenas','Central','Lepanto'),
@@ -473,7 +479,8 @@ INSERT INTO UBICACION VALUES('Puntarenas','Central','Puntarenas'),
 ('Puntarenas','Garabito','Jacó'),
 ('Puntarenas','Garabito','Tárcoles')
 
-INSERT INTO UBICACION VALUES ('Limon','Central','Limón'),
+INSERT INTO UBICACION (Provincia,Canton,Distrito)
+VALUES('Limon','Central','Limón'),
 ('Limon','Central','Valle La Estrella'),
 ('Limon','Central','Rio Blanco'),
 ('Limon','Central','Matama'),
@@ -504,52 +511,83 @@ INSERT INTO UBICACION VALUES ('Limon','Central','Limón'),
 ('Limon','Guácimo','Duacari')
 
 /*5TIPO_INMUEBLE*/
-INSERT INTO TIPO_INMUEBLE VALUES('Lote'),('Casa'),('Apartamento')
+INSERT INTO TIPO_INMUEBLE(Nombre)
+VALUES('Lote'),('Casa'),('Apartamento')
 
 /*6TIPO_PISO*/
-INSERT INTO TIPO_PISO VALUES('Concreto lujado'), ('Ceramica'),('Porcelanato')
+INSERT INTO TIPO_PISO(Nombre)
+VALUES('Concreto lujado'), ('Ceramica'),('Porcelanato')
 
 
 /*7ADMINISTRADOR*/
-INSERT INTO ADMINISTRADOR VALUES(123456789,'Martin','Calderon','Blanco','1998-03-22','2019-10-05','martinrolo','martinadmin');
-/*
+INSERT INTO ADMINISTRADOR(Cedula,Nombre,Apellido1,Apellido2,Fecha_Nacimiento,Fecha_Ingreso_TECres,Usuario,Contrasena)
+VALUES(123456789,'Martin','Calderon','Blanco','1998-03-22','2019-10-05','martinrolo','martinadmin');
+
 /*8FACTURA*/
-INSERT FACTURA VALUES(1000,'2019-05-10 20:55:14')
+INSERT FACTURA(Monto,Fecha)
+VALUES(1000,'2019-05-10 20:55:14')
 
 
 /*9CLIENTE*/
-INSERT INTO CLIENTE VALUES(122222223,'Marco','Rivera','Meneses','Costarricense','mriveramTecgmail.com','mriveramTec','123456','Agente')
+INSERT INTO CLIENTE (Cedula,Nombre,Apellido1,Apellido2,Nacionalidad,Correo,Usuario,Contrasena,Perfil_Cliente)
+VALUES(122222223,'Marco','Madrigal','Mora','Costarricense','mMm@gmail.com','mMmTec','123456','Agente'),
+(160903200,'Vernon','Heath','Cross','Bulgaria','elit.erat@necante.org','lobortis','Phasellus','Propietario'),
+(169109175,'Chaim','England','Battle','Poland','tristique.nequ@mus.net','turpis','lacus','Anunciante')
+
 
 /*10VENDEDOR*/
-INSERT INTO VENDEDOR VALUES(987654321,'Gabriel','Brenes','Vega','2019-05-10',123456789)
+INSERT INTO VENDEDOR (Cedula,Nombre,Apellido1,Apellido2,Fecha_Ingreso,Cedula_Admin)
+VALUES(987654321,'Gabriel','Brenes','Vega','2019-05-10',123456789),
+(312321311,'Juan','Hong','Perez','2019-07-10 00:00:00.000',123456789)
 
 
 /*11COMPRADOR*/
-INSERT INTO COMPRADOR VALUES('Pedro','Sola','Reus','Hombre','1960-04-04',400000,'pedrosola2','1234sola',1)
+INSERT INTO COMPRADOR (Nombre,Apellido1,Apellido2,Genero,Fecha_Nacimiento,Ingresos_Mes,Usuario,Contrasena,ID_Ubicacion)
+VALUES('Pedro','Sola','Reus','Hombre','1960-04-04',400000,'pedrosola2','1234sola',1),
+('Sebastian','Torres','Frederick','Hombre','1976-04-30 00:00:00.000',700000,'consequat','Pellentesque',6),
+('Whitney','Horton','Leblanc','Mujer','1989-11-21 00:00:00.000',1000000,'auctor','tempor',131)
 
 /*12TIENE_OCUPACION*/
-INSERT INTO TIENE_OCUPACION VALUES(1,'Agente')
+INSERT INTO TIENE_OCUPACION(ID_Comprador,Ocupacion)
+VALUES(1,'Agente')
 
 /*13Propiedad*/
-INSERT INTO PROPIEDAD VALUES(10000000,'Norte de la basilica','Casa Grande',2,2,2,2,350,500,8,4,2,'Casa de 2 plantas buen estado','C/Server_Image/propiedad_2.png',1,'Casa',122222223)
-
+INSERT INTO PROPIEDAD(Precio,Direccion_Exacta,Titulo,Parqueo_Visitas,Niveles,Piscina,Gimnasio,Tamano_Terreno,Tamano_Construccion,Cant_Habitaciones,Cant_Banos,Cant_Parqueos,Descripcion,Foto_Principal,ID_Ubicacion,Nombre_Inmueble,Cedula_Cliente)
+VALUES(10000000,'Norte de la basilica','Casa Grande',2,2,2,2,350,500,8,4,2,'Casa de 2 plantas buen estado','C/Server_Image/propiedad_2.png',1,'Casa',122222223),
+(10000000,'WALMART 100mts','Casa Azul',1,2,1,1,350,500,10,4,2,'Casa de 2 plantas buen estado','C/Server_Image/propiedad_1.png',200,'Casa',169109175),
+(200000000,'Detras del estadio','MANSION',1,3,1,1,600,800,20,10,5,'Masion gigante con 3 plantas comoda','C/Server_Image/masion.png',421,'Casa',160903200),
+(200000,'Centro del distrito','Lote grande',0,1,0,0,400,0,0,0,0,'Lote grande para construcion','C/Server_Image/lote.png',253,'Lote',169109175)
 
 /*14TIENE_PISO*/
-INSERT INTO TIENE_PISO VALUES(1,'Ceramica')
+INSERT INTO TIENE_PISO(ID_Propiedad,Tipo_Piso)
+VALUES(1,'Ceramica')
 
 /*15FOTO*/
-INSERT FOTO VALUES('C/Server_Image/propiedad_2.png',1);
+INSERT FOTO (Dir_URL,ID_Propiedad)
+VALUES('C/Server_Image/propiedad_2.png',1),
+('C/Server_Image/propiedad_3.png',1),
+('C/Server_Image/propiedad_4.png',2)
 
 /*16ANUNCIO*/
-INSERT INTO ANUNCIO VALUES('Casa de 2 plantas, grande y comoda','Venta',0,1232213332,NULL,'2019-10-05 13:4:42','2019-11-05 13:04:42',1,1,987654321,'Normal',1,123456789);
-
+INSERT INTO ANUNCIO(Nombre,Clasificacion,Aprobado,Tarjeta_Credito,Visitas,Fecha_Inicio,Fecha_Fin,ID_Factura,ID_Propiedad,Cedula_Vendedor,Tipo_Anuncio,ID_Publico_Meta,Cedula_Admin)
+VALUES('Casa de 2 plantas, grande y comoda','Venta',0,1232213332,NULL,'2019-10-05 13:4:42','2019-11-05 13:04:42',1,1,987654321,'Normal',1,123456789),
+('Casa de 2 plantas, grande y comoda','Venta',1,1232213332,NULL,'2019-10-05 13:04:42.000','2019-11-05 13:04:42.000',1,2,312321311,'Normal',1,123456789),
+('Casa de 4 plantas','Venta',1,1232213332,NULL,'2019-10-05 15:04:42.000','2019-11-05 15:04:42.000',1,2,987654321,'Platino',1,123456789),
+('BICI','Venta',1,1232213332,NULL,'2019-10-05 15:04:42.000','2019-11-05 15:04:42.000',1,1,987654321,'Oro',1,123456789)
 
 /*17Publico_META*/
-INSERT INTO PUBLICO_META VALUES('Todos',100000,18,100,1);
+INSERT INTO PUBLICO_META(Nombre,Genero,Ingresos,Edad_Min,Edad_Max,ID_Ubicacion)
+VALUES('Todos','Todos',100000,18,100,1);
 
 /*18MENSAJE*/
-INSERT MENSAJE VALUES('Hola, me interesa la casa',1,122222223)
-*/
+INSERT MENSAJE(Descripcion,ID_Comprador,Cedula_Cliente)
+VALUES('Hola, me interesa la casa',1,122222223),
+('Interesado',1,160903200),
+('QUIERO ESTA CASA',2,122222223),
+('Buenas tarde',1,169109175),
+('Hi, Buy your house',1,169109175),
+('::)',1,169109175)
+
 
 
 /*EN ESTE ESPACIO SE AGREGA CUALQUIER TIPO DE CONSULTA O PROCEDIMIENTO SOBRE LA TABLA TIENE_OCUPACION (INSERTS, DELETES,FOREIGN KEY,ETC)*/
@@ -559,3 +597,57 @@ INSERT MENSAJE VALUES('Hola, me interesa la casa',1,122222223)
 --#######################################################
 --------######&&&&&& QUERYS SIMPLES DE VERIFICACION DE POPULACION &&&&&&#######----------
 --#######################################################
+
+Select *
+FROM ADMINISTRADOR
+
+Select *
+FROM ANUNCIO
+
+Select *
+FROM CLIENTE
+
+Select *
+FROM COMPRADOR
+
+Select *
+FROM FACTURA
+
+Select *
+FROM FOTO
+
+Select *
+FROM MENSAJE
+
+SELECT *
+FROM OCUPACION
+
+Select *
+FROM PERFIL_DE_CLIENTE
+
+Select *
+FROM PROPIEDAD
+
+Select *
+FROM PUBLICO_META
+
+Select *
+FROM TIENE_OCUPACION
+
+Select *
+FROM TIENE_PISO
+
+Select *
+FROM TIPO_ANUNCIO
+
+Select *
+FROM TIPO_INMUEBLE
+
+Select *
+FROM TIPO_PISO
+
+Select *
+FROM UBICACION
+
+Select *
+FROM VENDEDOR
