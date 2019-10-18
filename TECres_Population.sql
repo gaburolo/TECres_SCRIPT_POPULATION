@@ -3,29 +3,28 @@
 /*#######################################################*/
 
 GO
-USE TECres
+USE TECres_prueba5
 GO
 
 
 /*DATOS DEFAULT*/
 /*1OCUPACION*/
-INSERT INTO OCUPACION(Nombre)
-VALUES('Agente'),('Constructor'),('Doctor'),('Ingeniero')
+INSERT INTO OCUPACION VALUES('Agente')
+INSERT INTO OCUPACION VALUES('Constructor')
+INSERT INTO OCUPACION VALUES('Doctor')
+INSERT INTO OCUPACION VALUES('Ingeniero')
 
 /*2PERFIL_CLIENTE*/
-INSERT INTO PERFIL_DE_CLIENTE(Nombre,Descripcion)
-VALUES('Agente','Vendedor de productos'),
-('Constructor','Encargado de construir propiedades'),
-('Propietario','Dueño de las propiedades'),
-('Anunciante','Encargado de promocionar propiedades')
+INSERT INTO PERFIL_DE_CLIENTE VALUES('Agente','Vendedor de productos')
+INSERT INTO PERFIL_DE_CLIENTE VALUES('Constructor','Encargado de construir propiedades')
+INSERT INTO PERFIL_DE_CLIENTE VALUES('Propietario','Dueño de las propiedades')
+INSERT INTO PERFIL_DE_CLIENTE VALUES('Anunciante','Encargado de promocionar propiedades')
 
 /*3TIPO_ANUNCIO*/
-INSERT INTO TIPO_ANUNCIO (Nombre,Descripcion,Costo)
-VALUES('Normal','Su prioridad sera baja',1000),('Descatado','Tendra una prioridad media',2000),('Oro','Tendra una prioridad alta',3000),('Platino','Principal entre los anuncios',4000);
+INSERT INTO TIPO_ANUNCIO VALUES('Normal','Su prioridad sera baja',1000),('Destacado','Tendra una prioridad media',2000),('Oro','Tendra una prioridad alta',3000),('Platino','Principal entre los anuncios',4000)
 
 /*4UBICACION*/
-INSERT INTO UBICACION (Provincia,Canton,Distrito)
-VALUES('San Jose','Central','San Pedro'),
+INSERT INTO UBICACION VALUES('San Jose','Central','San Pedro'),
 ('San Jose','Central','Sabanilla'),
 ('San Jose','Central','Mercedes'),
 ('San Jose','Central','San Rafael'),
@@ -138,10 +137,9 @@ VALUES('San Jose','Central','San Pedro'),
 ('San Jose','León Cortés Castro','Llano Bonito'),
 ('San Jose','León Cortés Castro','San Isidro'),
 ('San Jose','León Cortés Castro','Santa Cruz'),
-('San Jose','León Cortés Castro','San Antonio')
+('San Jose','León Cortés Castro','San Antonio');
 
-INSERT INTO UBICACION (Provincia,Canton,Distrito)
-VALUES('Alajuela','Central','Alajuela'),
+INSERT INTO UBICACION VALUES('Alajuela','Central','Alajuela'),
 ('Alajuela','Central','San José'),
 ('Alajuela','Central','Carrizal'),
 ('Alajuela','Central','San Antonio'),
@@ -256,9 +254,7 @@ VALUES('Alajuela','Central','Alajuela'),
 ('Alajuela','Guatuso','Katira'),
 ('Alajuela','Río Cuarto','Río Cuarto')
 
-
-INSERT INTO UBICACION (Provincia,Canton,Distrito)
-VALUES('Cartago','Central','Oriental'),
+INSERT INTO UBICACION VALUES('Cartago','Central','Oriental'),
 ('Cartago','Central','Occidental'),
 ('Cartago','Central','Carmen'),
 ('Cartago','Central','San Nicolás'),
@@ -310,8 +306,7 @@ VALUES('Cartago','Central','Oriental'),
 ('Cartago','El Guarco','Tobosi'),
 ('Cartago','El Guarco','Patio De Agua')
 
-INSERT INTO UBICACION (Provincia,Canton,Distrito)
-VALUES('Heredia','Central','Heredia'),
+INSERT INTO UBICACION VALUES('Heredia','Central','Heredia'),
 ('Heredia','Central','Mercedes'),
 ('Heredia','Central','San Francisco'),
 ('Heredia','Central','Ulloa'),
@@ -359,8 +354,7 @@ VALUES('Heredia','Central','Heredia'),
 ('Heredia','Sarapiquí','Llanuras Del Gaspar'),
 ('Heredia','Sarapiquí','Cureña')
 
-INSERT INTO UBICACION (Provincia,Canton,Distrito)
-VALUES('Guanacaste','Liberia','Liberia'),
+INSERT INTO UBICACION VALUES('Guanacaste','Liberia','Liberia'),
 ('Guanacaste','Liberia','Nacascolo'),
 ('Guanacaste','Liberia','Cañas Dulces'),
 ('Guanacaste','Liberia','Mayorga'),
@@ -419,8 +413,8 @@ VALUES('Guanacaste','Liberia','Liberia'),
 ('Guanacaste','Hojancha','Monte Romo'),
 ('Guanacaste','Hojancha','Puerto Carrillo'),
 ('Guanacaste','Hojancha','Huacas')
-INSERT INTO UBICACION (Provincia,Canton,Distrito)
-VALUES('Puntarenas','Central','Puntarenas'),
+
+INSERT INTO UBICACION VALUES('Puntarenas','Central','Puntarenas'),
 ('Puntarenas','Central','Pitahaya'),
 ('Puntarenas','Central','Chomes'),
 ('Puntarenas','Central','Lepanto'),
@@ -479,8 +473,7 @@ VALUES('Puntarenas','Central','Puntarenas'),
 ('Puntarenas','Garabito','Jacó'),
 ('Puntarenas','Garabito','Tárcoles')
 
-INSERT INTO UBICACION (Provincia,Canton,Distrito)
-VALUES('Limon','Central','Limón'),
+INSERT INTO UBICACION VALUES ('Limon','Central','Limón'),
 ('Limon','Central','Valle La Estrella'),
 ('Limon','Central','Rio Blanco'),
 ('Limon','Central','Matama'),
@@ -511,12 +504,10 @@ VALUES('Limon','Central','Limón'),
 ('Limon','Guácimo','Duacari')
 
 /*5TIPO_INMUEBLE*/
-INSERT INTO TIPO_INMUEBLE(Nombre)
-VALUES('Lote'),('Casa'),('Apartamento')
+INSERT INTO TIPO_INMUEBLE VALUES('Lote'),('Casa'),('Apartamento')
 
 /*6TIPO_PISO*/
-INSERT INTO TIPO_PISO(Nombre)
-VALUES('Concreto lujado'), ('Ceramica'),('Porcelanato')
+INSERT INTO TIPO_PISO VALUES('Concreto lujado'), ('Ceramica'),('Porcelanato')
 
 
 /*7ADMINISTRADOR*/
@@ -558,8 +549,8 @@ INSERT INTO PUBLICO_META VALUES('Todos',100000,18,100,1);
 
 /*18MENSAJE*/
 INSERT MENSAJE VALUES('Hola, me interesa la casa',1,122222223)
-
 */
+
 
 /*EN ESTE ESPACIO SE AGREGA CUALQUIER TIPO DE CONSULTA O PROCEDIMIENTO SOBRE LA TABLA TIENE_OCUPACION (INSERTS, DELETES,FOREIGN KEY,ETC)*/
 
@@ -568,57 +559,3 @@ INSERT MENSAJE VALUES('Hola, me interesa la casa',1,122222223)
 --#######################################################
 --------######&&&&&& QUERYS SIMPLES DE VERIFICACION DE POPULACION &&&&&&#######----------
 --#######################################################
-
-Select *
-FROM ADMINISTRADOR
-
-Select *
-FROM ANUNCIO
-
-Select *
-FROM CLIENTE
-
-Select *
-FROM COMPRADOR
-
-Select *
-FROM FACTURA
-
-Select *
-FROM FOTO
-
-Select *
-FROM MENSAJE
-
-SELECT *
-FROM OCUPACION
-
-Select *
-FROM PERFIL_DE_CLIENTE
-
-Select *
-FROM PROPIEDAD
-
-Select *
-FROM PUBLICO_META
-
-Select *
-FROM TIENE_OCUPACION
-
-Select *
-FROM TIENE_PISO
-
-Select *
-FROM TIPO_ANUNCIO
-
-Select *
-FROM TIPO_INMUEBLE
-
-Select *
-FROM TIPO_PISO
-
-Select *
-FROM UBICACION
-
-Select *
-FROM VENDEDOR
